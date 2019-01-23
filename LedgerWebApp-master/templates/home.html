@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<body>
+{% if user %}
+<h1>Hi, {{current_user.username}}!</h1>
+{% endif %}
+
+
+<h2>Home</h2>
+<p>Ledgers is a online resource where you can charge or make payments with other Ledgers Users.</p>
+<br>
+
+
+
+</body>
+{% endblock %}
+
+</html>

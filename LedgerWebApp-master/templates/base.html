@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<div class = "nav">
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            {% if current_user.is_anonymous %}
+                <li><a href="{{ url_for('register') }}">Create Account</a></li>
+                <li><a href="{{ url_for('load_login') }}">Login</a></li>
+            {% else %}
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('logout')}}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% block content %}
+{% endblock %}
+</html>
